@@ -236,7 +236,7 @@ export default function App() {
                 </h3>
                 <div style={{ width: "100%", height: "300px" }}>
                   <ResponsiveContainer>
-                    <LineChart data={chartData} margin={{ top: 10, right: 20, left: 0, bottom: 60 }}>
+                    <LineChart data={chartData} margin={{ top: 40, right: 20, left: 0, bottom: 60 }}>
                       <CartesianGrid strokeDasharray="3 3" />
                       <XAxis dataKey="lokasi" tick={{ fontSize: 10 }} interval={0} angle={-45} textAnchor="end" height={80} />
                       <YAxis />

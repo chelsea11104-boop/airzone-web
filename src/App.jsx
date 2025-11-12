@@ -1,4 +1,5 @@
 import { useState, useRef } from "react";
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from "recharts";
 
 export default function App() {
   const [section, setSection] = useState("home");
@@ -7,6 +8,19 @@ export default function App() {
   const scrollToPeta = () => {
     petaRef.current?.scrollIntoView({ behavior: "smooth" });
   };
+
+  const dataPolusi = [
+    { lokasi: "Pabuaran, Kabupaten Bogor", nilai: 112.0 },
+    { lokasi: "Pamanukan, Kabupaten Subang", nilai: 108.0 },
+    { lokasi: "Lembang, Kabupaten Bandung Barat", nilai: 105.0 },
+    { lokasi: "Pamulang, Kota Tangerang Selatan", nilai: 89.0 },
+    { lokasi: "Cikupa, Kabupaten Tangerang", nilai: 89.0 },
+    { lokasi: "Cileunyi, Kabupaten Bandung", nilai: 88.0 },
+    { lokasi: "Lebak Bulus, Kota Jakarta Selatan", nilai: 79.0 },
+    { lokasi: "Cikampek, Kabupaten Karawang", nilai: 77.0 },
+    { lokasi: "Rawa Buntu, Kota Tangerang Selatan", nilai: 77.0 },
+    { lokasi: "Banjaran, Kabupaten Bandung", nilai: 76.0 },
+  ];
 
   return (
     <div
@@ -202,6 +216,39 @@ export default function App() {
                 transparansi data dan edukasi publik sebagai langkah awal menuju
                 lingkungan yang lebih bersih dan sehat.
               </p>
+            </div>
+
+            <div
+                style={{
+                  marginTop: "50px",
+                  backgroundColor: "#f0f9ff",
+                  borderRadius: "12px",
+                  padding: "30px",
+                  boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
+                }}
+              >
+                <h3
+                  style={{
+                    color: "#0284c7",
+                    fontSize: "1.3rem",
+                    fontWeight: "700",
+                    marginBottom: "20px",
+                    textAlign: "center",
+                  }}
+                >
+                  Tren Kualitas Udara Beberapa Wilayah
+                </h3>
+                <ResponsiveContainer width="100%" height={300}>
+                  <LineChart data={dataPolusi}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="lokasi" angle={-20} textAnchor="end" height={80} />
+                    <YAxis />
+                    <Tooltip />
+                    <Legend />
+                    <Line type="monotone" dataKey="nilai" stroke="#0284c7" strokeWidth={3} activeDot={{ r: 7 }} />
+                  </LineChart>
+                </ResponsiveContainer>
+              </div>
             </div>
 
             {/* Kanan */}

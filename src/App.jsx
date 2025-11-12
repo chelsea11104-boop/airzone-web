@@ -133,7 +133,7 @@ export default function App() {
                 marginBottom: "20px",
               }}
             >
-              <a href="https://airzone.rf.gd/map.html/" target="_blank" rel="noreferrer">
+              <a href="https://airzone.rf.gd/" target="_blank" rel="noreferrer">
                 <button style={primaryButton}>Cek Udara Sekitarmu</button>
               </a>
               <button onClick={() => setSection("about")} style={outlineButton}>
@@ -306,7 +306,7 @@ export default function App() {
                 Peta Udara Regional
               </h2>
               <a
-                href="https://airzone.rf.gd/map.html/"
+                href="https://airzone.rf.gd/"
                 target="_blank"
                 rel="noreferrer"
                 style={{ display: "inline-block" }}
@@ -434,7 +434,7 @@ export default function App() {
               </div>
               <div style={fiturBox}>
                 <div style={{ fontSize: "2.3rem" }}>🧘‍♀️</div>
-                <h3 style={fiturTitle}>Kebiasaan Sehat di Udara Buruk</h3>
+                <h3 style={fiturTitle}>Kebiasaan Sehat di Kondisi Udara Buruk</h3>
                 <p style={fiturText}>
                   Gunakan masker saat beraktivitas di luar ruangan, hindari olahraga berat di area berpolusi, dan pastikan ruangan memiliki ventilasi yang baik.
                   Perbanyak minum air putih dan konsumsi buah serta sayur untuk menjaga daya tahan tubuh.

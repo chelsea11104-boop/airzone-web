@@ -237,10 +237,10 @@ export default function App() {
                   <ResponsiveContainer>
                     <LineChart data={chartData} margin={{ top: 10, right: 20, left: 0, bottom: 0 }}>
                       <CartesianGrid strokeDasharray="3 3" />
-                      <XAxis dataKey="bulan" />
+                      <XAxis dataKey="lokasi" tick={{ fontSize: 10 }} interval={0} angle={-45} textAnchor="end" height={80} />
                       <YAxis />
                       <Tooltip />
-                      <Line type="monotone" dataKey="AQI" stroke="#0284c7" strokeWidth={3} />
+                      <Line type="monotone" dataKey="nilai" stroke="#0284c7" strokeWidth={3} />
                     </LineChart>
                   </ResponsiveContainer>
                 </div>

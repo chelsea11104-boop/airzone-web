@@ -211,47 +211,92 @@ export default function App() {
                 transparansi data dan edukasi publik sebagai langkah awal menuju
                 lingkungan yang lebih bersih dan sehat.
               </p>
-              
+
               {/* Grafik Garis Kualitas Udara */}
               <div
                 style={{
-                  width: "100%",
-                  marginTop: "200px",
+                  display: "flex",
+                  gap: "30px",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  flexWrap: "wrap",
+                  marginTop: "40px",
                   backgroundColor: "#f0f9ff",
                   borderRadius: "12px",
-                  padding: "20px",
+                  padding: "20px 30px",
                   boxShadow: "0 4px 10px rgba(0,0,0,0.05)",
-                  overflowX: "auto",
                 }}
               >
-                <h3
-                  style={{
-                    color: "#0284c7",
-                    fontWeight: "700",
-                    fontSize: "1.2rem",
-                    marginBottom: "10px",
-                  }}
-                >
-                  Kota dengan polusi udara tinggi (AirZone +)
-                </h3>
-                <div style={{ width: "100%", height: "300px" }}>
-                  <ResponsiveContainer>
-                    <LineChart data={chartData} margin={{ top: 30, right: 20, left: 0, bottom: 60 }}>
-                      <CartesianGrid strokeDasharray="3 3" />
-                      <XAxis dataKey="lokasi" tick={{ fontSize: 10 }} interval={0} angle={-45} textAnchor="end" height={80} />
-                      <YAxis 
-                        domain={[0, 120]}
-                        ticks={[0, 20, 40, 60, 80, 100, 120]}
-                        tick={{ fontSize: 12 }}
-                        interval={0}
-                        allowDecimals={false}
-                      />
-                      <Tooltip />
-                      <Line type="monotone" dataKey="nilai" stroke="#0284c7" strokeWidth={3} />
-                    </LineChart>
-                  </ResponsiveContainer>
+                {/* Grafik di kiri */}
+                <div style={{ flex: "1 1 60%", minWidth: "400px" }}>
+                  <h3
+                    style={{
+                      color: "#0284c7",
+                      fontWeight: "700",
+                      fontSize: "1.2rem",
+                      marginBottom: "10px",
+                    }}
+                  >
+                    Kota dengan polusi udara tinggi (AirZone +)
+                  </h3>
+                  <div style={{ width: "100%", height: "320px" }}>
+                    <ResponsiveContainer>
+                      <LineChart
+                        data={chartData}
+                        margin={{ top: 50, right: 20, left: 0, bottom: 60 }}
+                      >
+                        <CartesianGrid strokeDasharray="3 3" />
+                        <XAxis
+                          dataKey="lokasi"
+                          tick={{ fontSize: 10 }}
+                          interval={0}
+                          angle={-45}
+                          textAnchor="end"
+                          height={80}
+                        />
+                        <YAxis
+                          domain={[0, 120]}
+                          ticks={[0, 20, 40, 60, 80, 100, 120]}
+                          tick={{ fontSize: 12 }}
+                          interval={0}
+                          allowDecimals={false}
+                        />
+                        <Tooltip />
+                        <Line
+                          type="monotone"
+                          dataKey="nilai"
+                          stroke="#0284c7"
+                          strokeWidth={3}
+                        />
+                      </LineChart>
+                    </ResponsiveContainer>
+                  </div>
+                </div>
+              
+                {/* Penjelasan di kanan */}
+                <div style={{ flex: "1 1 35%", minWidth: "250px" }}>
+                  <p
+                    style={{
+                      color: "#444",
+                      lineHeight: "1.7",
+                      fontSize: "1rem",
+                      textAlign: "justify",
+                    }}
+                  >
+                    Grafik <b>“Kota dengan Polusi Udara Tinggi (AirZone +)”</b> menunjukkan sepuluh
+                    daerah dengan tingkat polusi udara tertinggi. Kabupaten Bogor menempati
+                    urutan pertama dengan nilai mendekati 120, disusul Kabupaten Subang dan
+                    Kabupaten Bandung Barat yang juga mencatat angka di atas 100. Daerah lain
+                    seperti Tangerang Selatan, Bandung, dan Jakarta Selatan memiliki tingkat
+                    polusi sedikit lebih rendah, berkisar antara 80–90. Secara umum, grafik ini
+                    menggambarkan bahwa wilayah Jawa Barat dan sekitarnya masih mendominasi
+                    kategori polusi udara tinggi, yang kemungkinan dipengaruhi oleh aktivitas
+                    kendaraan, industri, dan kepadatan penduduk.
+                  </p>
                 </div>
               </div>
+
+              
             </div>
 
             {/* Kanan */}

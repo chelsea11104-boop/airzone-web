@@ -239,7 +239,10 @@ export default function App() {
                     <LineChart data={chartData} margin={{ top: 30, right: 20, left: 0, bottom: 60 }}>
                       <CartesianGrid strokeDasharray="3 3" />
                       <XAxis dataKey="lokasi" tick={{ fontSize: 10 }} interval={0} angle={-45} textAnchor="end" height={80} />
-                      <YAxis />
+                      <YAxis
+                        domain={[0, 120]}        // batas bawah & atas
+                        tickCount={7}
+                      />
                       <Tooltip />
                       <Line type="monotone" dataKey="nilai" stroke="#0284c7" strokeWidth={3} />
                     </LineChart>

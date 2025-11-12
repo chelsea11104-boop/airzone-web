@@ -231,7 +231,7 @@ export default function App() {
                     marginBottom: "10px",
                   }}
                 >
-                  Tren Indeks Kualitas Udara (AQI)
+                  Kota dengan polusi udara tinggi (AirZone +)
                 </h3>
                 <div style={{ width: "100%", height: "300px" }}>
                   <ResponsiveContainer>

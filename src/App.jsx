@@ -216,7 +216,7 @@ export default function App() {
               <div
                 style={{
                   display: "flex",
-                  gap: "10px",
+                  gap: "40px",
                   alignItems: "center",
                   justifyContent: "space-between",
                   flexWrap: "wrap",
@@ -291,8 +291,6 @@ export default function App() {
                     industri, serta kepadatan penduduk yang tinggi.
                 </div>
               </div>
-
-              
             </div>
 
             {/* Kanan */}

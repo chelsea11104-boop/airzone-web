@@ -274,7 +274,7 @@ export default function App() {
                 </div>
               
                 {/* Penjelasan di kanan */}
-                <div style={{ flex: "1 1 35%", minWidth: "250px" }}>
+                <div style={{ flex: "1 1 35%", minWidth: "250px", marginTop: "-10px" }}>
                   <p
                     style={{
                       color: "#444",

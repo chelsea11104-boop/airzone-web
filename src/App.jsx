@@ -289,6 +289,7 @@ export default function App() {
                     tetap signifikan. Secara keseluruhan, grafik ini menggambarkan bahwa wilayah Jawa Barat dan sekitarnya masih 
                     mendominasi kategori daerah dengan polusi udara tinggi, yang kemungkinan dipengaruhi oleh aktivitas kendaraan, 
                     industri, serta kepadatan penduduk yang tinggi.
+                  </p>
                 </div>
               </div>
             </div>

@@ -240,8 +240,11 @@ export default function App() {
                       <CartesianGrid strokeDasharray="3 3" />
                       <XAxis dataKey="lokasi" tick={{ fontSize: 10 }} interval={0} angle={-45} textAnchor="end" height={80} />
                       <YAxis 
-                        domain={[0, 120]} 
+                        domain={[0, 120]}
                         ticks={[0, 20, 40, 60, 80, 100, 120]}
+                        tick={{ fontSize: 12 }}
+                        interval={0}
+                        allowDecimals={false}
                       />
                       <Tooltip />
                       <Line type="monotone" dataKey="nilai" stroke="#0284c7" strokeWidth={3} />

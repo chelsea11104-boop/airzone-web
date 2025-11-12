@@ -500,16 +500,16 @@ export default function App() {
 
 /* === STYLE REUSABLE === */
 const chartData = [
-  { lokasi: "Pabuaran, Kabupaten Bogor", nilai: 112.0 },
-  { lokasi: "Pamanukan, Kabupaten Subang", nilai: 108.0 },
-  { lokasi: "Lembang, Kabupaten Bandung Barat", nilai: 105.0 },
-  { lokasi: "Pamulang, Kota Tangerang Selatan", nilai: 89.0 },
-  { lokasi: "Cikupa, Kabupaten Tangerang", nilai: 89.0 },
-  { lokasi: "Cileunyi, Kabupaten Bandung", nilai: 88.0 },
-  { lokasi: "Lebak Bulus, Kota Jakarta Selatan", nilai: 79.0 },
-  { lokasi: "Cikampek, Kabupaten Karawang", nilai: 77.0 },
-  { lokasi: "Rawa Buntu, Kota Tangerang Selatan", nilai: 77.0 },
-  { lokasi: "Banjaran, Kabupaten Bandung", nilai: 76.0 },
+  { lokasi: "Pabuaran", nilai: 112.0 },
+  { lokasi: "Pamanukan", nilai: 108.0 },
+  { lokasi: "Lembang", nilai: 105.0 },
+  { lokasi: "Pamulang", nilai: 89.0 },
+  { lokasi: "Cikupa", nilai: 89.0 },
+  { lokasi: "Cileunyi", nilai: 88.0 },
+  { lokasi: "Lebak Bulus", nilai: 79.0 },
+  { lokasi: "Cikampek", nilai: 77.0 },
+  { lokasi: "Rawa Buntu", nilai: 77.0 },
+  { lokasi: "Banjaran", nilai: 76.0 },
 ];
   
 const navButton = {

@@ -216,7 +216,7 @@ export default function App() {
               <div
                 style={{
                   width: "100%",
-                  marginTop: "120px",
+                  marginTop: "200px",
                   backgroundColor: "#f0f9ff",
                   borderRadius: "12px",
                   padding: "20px",

@@ -216,7 +216,7 @@ export default function App() {
               <div
                 style={{
                   display: "flex",
-                  gap: "30px",
+                  gap: "10px",
                   alignItems: "center",
                   justifyContent: "space-between",
                   flexWrap: "wrap",
@@ -283,16 +283,12 @@ export default function App() {
                       textAlign: "justify",
                     }}
                   >
-                    Grafik <b>“Kota dengan Polusi Udara Tinggi (AirZone +)”</b> menunjukkan sepuluh
-                    daerah dengan tingkat polusi udara tertinggi. Kabupaten Bogor menempati
-                    urutan pertama dengan nilai mendekati 120, disusul Kabupaten Subang dan
-                    Kabupaten Bandung Barat yang juga mencatat angka di atas 100. Daerah lain
-                    seperti Tangerang Selatan, Bandung, dan Jakarta Selatan memiliki tingkat
-                    polusi sedikit lebih rendah, berkisar antara 80–90. Secara umum, grafik ini
-                    menggambarkan bahwa wilayah Jawa Barat dan sekitarnya masih mendominasi
-                    kategori polusi udara tinggi, yang kemungkinan dipengaruhi oleh aktivitas
-                    kendaraan, industri, dan kepadatan penduduk.
-                  </p>
+                    Grafik <b>“Kota dengan Polusi Udara Tinggi (AirZone +)”</b> menunjukkan bahwa Pabuaran memiliki tingkat polusi 
+                    udara tertinggi, diikuti oleh Pamanukan dan Lembang dengan nilai yang juga cukup tinggi. Sementara itu, 
+                    daerah lain seperti Pamulang, Cikupa, dan Cileunyi menunjukkan tingkat polusi yang sedikit lebih rendah namun 
+                    tetap signifikan. Secara keseluruhan, grafik ini menggambarkan bahwa wilayah Jawa Barat dan sekitarnya masih 
+                    mendominasi kategori daerah dengan polusi udara tinggi, yang kemungkinan dipengaruhi oleh aktivitas kendaraan, 
+                    industri, serta kepadatan penduduk yang tinggi.
                 </div>
               </div>
 

@@ -9,14 +9,47 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
+const SPREADSHEET_URL =
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vQivk4fY6CxROt4K35MuOHHEL7rVSAUGD9fMRz5kcgrJAzuEDohaBs2bKKpxVQzq-LPsqBo-T0OY2ub/pub?gid=0&single=true&output=csv";   // link CSV dari google sheet
+
 export default function App() {
   const [section, setSection] = useState("home");
   const petaRef = useRef(null);
 
+  const [lokasiData, setLokasiData] = useState([]);
+  // Fetch CSV dari Google Spreadsheet
+  useEffect(() => {
+    fetch(SPREADSHEET_URL)
+      .then((res) => res.text())
+      .then((csv) => {
+        const rows = csv.split("\n").map((r) => r.split(","));
+        const formatted = rows.slice(1).map((row) => ({
+          nama: row[0],
+          kabupaten: row[1],
+          lat: row[2],
+          lon: row[3],
+        }));
+        setLokasiData(formatted);
+      });
+  }, []);
+  
   const scrollToPeta = () => {
     petaRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
+  const thStyle = {
+    padding: "12px",
+    fontWeight: "700",
+    color: "#0284c7",
+    borderBottom: "2px solid #bbb",
+  };
+
+  const tdStyle = {
+    padding: "10px",
+    color: "#333",
+    borderBottom: "1px solid #ddd",
+  };
+  
   return (
     <div
       style={{
@@ -318,6 +351,57 @@ export default function App() {
               ))}
             </div>
           </div>
+        </section>
+      )}
+
+      {/* === LOKASI PEMANTAUAN === */}
+      {section === "location" && (
+        <section
+          style={{
+            backgroundColor: "white",
+            padding: "60px 80px",
+            minHeight: "100vh",
+          }}
+        >
+          <h2
+            style={{
+              fontSize: "2rem",
+              fontWeight: "700",
+              color: "#0284c7",
+              marginBottom: "20px",
+            }}
+          >
+            Lokasi Pemantauan
+          </h2>
+      
+          <table
+            style={{
+              width: "100%",
+              borderCollapse: "collapse",
+              marginTop: "20px",
+              border: "1px solid #ddd",
+            }}
+          >
+            <thead>
+              <tr style={{ backgroundColor: "#e0f4ff" }}>
+                <th style={thStyle}>Nama Lokasi</th>
+                <th style={thStyle}>Kabupaten/Kota</th>
+                <th style={thStyle}>Latitude</th>
+                <th style={thStyle}>Longitude</th>
+              </tr>
+            </thead>
+      
+            <tbody>
+              {lokasiData.map((item, index) => (
+                <tr key={index}>
+                  <td style={tdStyle}>{item.nama}</td>
+                  <td style={tdStyle}>{item.kabupaten}</td>
+                  <td style={tdStyle}>{item.lat}</td>
+                  <td style={tdStyle}>{item.lon}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </section>
       )}
 

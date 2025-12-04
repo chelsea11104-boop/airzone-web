@@ -332,7 +332,7 @@ export default function App() {
         <section
           style={{
             backgroundColor: "white",
-            padding: "60px 80px",
+            padding: "20px 80px",
             minHeight: "100vh",
           }}
         >

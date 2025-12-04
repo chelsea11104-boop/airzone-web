@@ -409,7 +409,7 @@ export default function App() {
                   textAlign: "justify",
                 }}
               >
-                Grafik <b>“Kota dengan Polusi Udara Tinggi (AirZone +)”</b> 
+                Grafik <b>“Kota dengan Polusi Udara Tinggi (PM2.5)”</b> 
                 menunjukkan bahwa Pabuaran memiliki tingkat polusi udara tertinggi, 
                 diikuti oleh Pamanukan dan Lembang dengan nilai yang tinggi. Daerah 
                 lain seperti Pamulang, Cikupa, dan Cileunyi menunjukkan tingkat polusi 

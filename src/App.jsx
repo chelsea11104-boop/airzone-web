@@ -10,7 +10,7 @@ import {
 } from "recharts";
 
 const SPREADSHEET_URL =
-  "https://docs.google.com/spreadsheets/d/e/2PACX-1vQivk4fY6CxROt4K35MuOHHEL7rVSAUGD9fMRz5kcgrJAzuEDohaBs2bKKpxVQzq-LPsqBo-T0OY2ub/pub?gid=0&single=true&output=csv";   // link CSV dari google sheet
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vQivk4fY6CxROt4K35MuOHHEL7rVSAUGD9fMRz5kcgrJAzuEDohaBs2bKKpxVQzq-LPsqBo-T0OY2ub/pub?gid=914761249&single=true&output=csv";   // link CSV dari google sheet
 
 export default function App() {
   const [section, setSection] = useState("home");

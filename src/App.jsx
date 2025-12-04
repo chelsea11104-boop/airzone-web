@@ -336,16 +336,6 @@ export default function App() {
             minHeight: "100vh",
           }}
         >
-          <h2
-            style={{
-              fontSize: "2rem",
-              fontWeight: "700",
-              color: "#0284c7",
-              marginBottom: "20px",
-            }}
-          >
-            Kota dengan Polusi Udara Tinggi (PM2.5)
-          </h2>
       
           {/* Grafik Garis Kualitas Udara */}
           <div

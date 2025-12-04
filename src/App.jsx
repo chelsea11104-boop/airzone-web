@@ -104,6 +104,9 @@ export default function App() {
           <button onClick={() => setSection("location")} style={navButton}>
             Lokasi Pemantauan
           </button>
+          <button onClick={() => setSection("statistic")} style={navButton}>
+            Statistik Partikulat
+          </button>
           <button onClick={() => setSection("features")} style={navButton}>
             Fitur Utama
           </button>

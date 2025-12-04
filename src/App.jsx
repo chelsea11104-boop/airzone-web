@@ -53,7 +53,7 @@ export default function App() {
   };
 
   const [pmData] = useState([
-    { lokasi: "TML Energy", provinsi: "Jawa Barat", pm: 67 µg/m³ },
+    { lokasi: "TML Energy", provinsi: "Jawa Barat", pm: 67 },
     { lokasi: "Setra Duta", provinsi: "Jawa Barat", pm: 62 },
     { lokasi: "Sentul City", provinsi: "Jawa Barat", pm: 58 },
     { lokasi: "Caringin", provinsi: "Jawa Barat", pm: 62 },

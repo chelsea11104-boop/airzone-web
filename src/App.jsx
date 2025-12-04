@@ -7,6 +7,8 @@ import {
   YAxis,
   Tooltip,
   ResponsiveContainer,
+  BarChart, 
+  Bar,
 } from "recharts";
 
 const SPREADSHEET_URL =
@@ -49,6 +51,30 @@ export default function App() {
     color: "#333",
     borderBottom: "1px solid #ddd",
   };
+
+  const [pmData] = useState([
+    { lokasi: "TML Energy", provinsi: "Jawa Barat", pm: 67 },
+    { lokasi: "Setra Duta", provinsi: "Jawa Barat", pm: 62 },
+    { lokasi: "Sentul City", provinsi: "Jawa Barat", pm: 58 },
+    { lokasi: "Caringin", provinsi: "Jawa Barat", pm: 62 },
+    { lokasi: "Pabuaran", provinsi: "Jawa Barat", pm: 112 },
+    { lokasi: "Soreang", provinsi: "Jawa Barat", pm: 69 },
+    { lokasi: "Lembang", provinsi: "Jawa Barat", pm: 105 },
+    { lokasi: "Pamanukan", provinsi: "Jawa Barat", pm: 108 },
+    { lokasi: "Cileunyi", provinsi: "Jawa Barat", pm: 88 },
+    { lokasi: "Banjaran", provinsi: "Jawa Barat", pm: 76 },
+  
+    { lokasi: "Mangga Dua", provinsi: "DKI Jakarta", pm: 55 },
+    { lokasi: "Kebon Jeruk", provinsi: "DKI Jakarta", pm: 50 },
+    { lokasi: "Tatalogam Lestari", provinsi: "DKI Jakarta", pm: 70 },
+    { lokasi: "Grogol Utara", provinsi: "DKI Jakarta", pm: 61 },
+    { lokasi: "Palmerah Selatan", provinsi: "DKI Jakarta", pm: 78 },
+    { lokasi: "Widya Chandra", provinsi: "DKI Jakarta", pm: 58 },
+    { lokasi: "Kemang", provinsi: "DKI Jakarta", pm: 57 },
+    { lokasi: "Lebak Bulus", provinsi: "DKI Jakarta", pm: 79 },
+    { lokasi: "Marunda", provinsi: "DKI Jakarta", pm: 62 },
+    { lokasi: "Cikampek", provinsi: "DKI Jakarta", pm: 77 },
+  ]);
   
   return (
     <div
@@ -419,6 +445,69 @@ export default function App() {
               </p>
             </div>
           </div>
+
+          {/* === STATISTIK PARTIKULAT (JAWA BARAT vs DKI JAKARTA) === */}
+          <div
+            style={{
+              marginTop: "60px",
+              backgroundColor: "#fff7ed",
+              padding: "30px",
+              borderRadius: "14px",
+              boxShadow: "0 4px 10px rgba(0,0,0,0.05)",
+            }}
+          >
+            <h2
+              style={{
+                fontSize: "1.7rem",
+                color: "#d97706",
+                fontWeight: "700",
+                marginBottom: "20px",
+              }}
+            >
+              Statistik Partikulat PM2.5 — Perbandingan Jawa Barat & DKI Jakarta
+            </h2>
+          
+            {/* ====== GRAFIK BATANG ====== */}
+            <div style={{ width: "100%", height: "350px", marginBottom: "30px" }}>
+              <ResponsiveContainer>
+                <BarChart data={pmData}>
+                  <CartesianGrid strokeDasharray="3 3" />
+                  <XAxis dataKey="lokasi" angle={-45} textAnchor="end" height={90} />
+                  <YAxis />
+                  <Tooltip />
+                  <Bar dataKey="pm" fill="#d97706" />
+                </BarChart>
+              </ResponsiveContainer>
+            </div>
+          
+            {/* ====== TABEL TITIK PARTIKEL ====== */}
+            <table
+              style={{
+                width: "100%",
+                borderCollapse: "collapse",
+                marginTop: "20px",
+                border: "1px solid #ddd",
+              }}
+            >
+              <thead>
+                <tr style={{ backgroundColor: "#fde68a" }}>
+                  <th style={thStyle}>Lokasi</th>
+                  <th style={thStyle}>Provinsi</th>
+                  <th style={thStyle}>PM2.5 (µg/m³)</th>
+                </tr>
+              </thead>
+          
+              <tbody>
+                {pmData.map((row, i) => (
+                  <tr key={i}>
+                    <td style={tdStyle}>{row.lokasi}</td>
+                    <td style={tdStyle}>{row.provinsi}</td>
+                    <td style={tdStyle}>{row.pm}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>    
         </section>
       )}
 

@@ -344,7 +344,7 @@ export default function App() {
               marginBottom: "20px",
             }}
           >
-            Statistik Partikulat (PM)
+            Kota dengan Polusi Udara Tinggi (PM2.5)
           </h2>
       
           {/* Grafik Garis Kualitas Udara */}

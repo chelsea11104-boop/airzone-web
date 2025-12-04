@@ -104,7 +104,7 @@ export default function App() {
           <button onClick={() => setSection("location")} style={navButton}>
             Lokasi Pemantauan
           </button>
-          <button onClick={() => setSection("statistic")} style={navButton}>
+          <button onClick={() => setSection("statistik")} style={navButton}>
             Statistik Partikulat
           </button>
           <button onClick={() => setSection("features")} style={navButton}>
@@ -250,87 +250,6 @@ export default function App() {
                 transparansi data dan edukasi publik sebagai langkah awal menuju
                 lingkungan yang lebih bersih dan sehat.
               </p>
-
-              {/* Grafik Garis Kualitas Udara */}
-              <div
-                style={{
-                  display: "flex",
-                  gap: "10px",
-                  alignItems: "center",
-                  justifyContent: "space-between",
-                  flexWrap: "wrap",
-                  marginTop: "40px",
-                  backgroundColor: "#f0f9ff",
-                  borderRadius: "12px",
-                  padding: "20px 30px",
-                  boxShadow: "0 4px 10px rgba(0,0,0,0.05)",
-                }}
-              >
-                {/* Grafik di kiri */}
-                <div style={{ flex: "1 1 60%", minWidth: "400px" }}>
-                  <h3
-                    style={{
-                      color: "#0284c7",
-                      fontWeight: "700",
-                      fontSize: "1.2rem",
-                      marginBottom: "10px",
-                    }}
-                  >
-                    Kota dengan polusi udara tinggi (AirZone +)
-                  </h3>
-                  <div style={{ width: "100%", height: "320px" }}>
-                    <ResponsiveContainer>
-                      <LineChart
-                        data={chartData}
-                        margin={{ top: 50, right: 20, left: 0, bottom: 10 }}
-                      >
-                        <CartesianGrid strokeDasharray="3 3" />
-                        <XAxis
-                          dataKey="lokasi"
-                          tick={{ fontSize: 10 }}
-                          interval={0}
-                          angle={-45}
-                          textAnchor="end"
-                          height={80}
-                        />
-                        <YAxis
-                          domain={[0, 120]}
-                          ticks={[0, 20, 40, 60, 80, 100, 120]}
-                          tick={{ fontSize: 12 }}
-                          interval={0}
-                          allowDecimals={false}
-                        />
-                        <Tooltip />
-                        <Line
-                          type="monotone"
-                          dataKey="nilai"
-                          stroke="#0284c7"
-                          strokeWidth={3}
-                        />
-                      </LineChart>
-                    </ResponsiveContainer>
-                  </div>
-                </div>
-              
-                {/* Penjelasan di kanan */}
-                <div style={{ flex: "1 1 35%", minWidth: "250px", marginTop: "-10px" }}>
-                  <p
-                    style={{
-                      color: "#444",
-                      lineHeight: "1.7",
-                      fontSize: "1rem",
-                      textAlign: "justify",
-                    }}
-                  >
-                    Grafik <b>“Kota dengan Polusi Udara Tinggi (AirZone +)”</b> menunjukkan bahwa Pabuaran memiliki tingkat polusi 
-                    udara tertinggi, diikuti oleh Pamanukan dan Lembang dengan nilai yang juga cukup tinggi. Sementara itu, 
-                    daerah lain seperti Pamulang, Cikupa, dan Cileunyi menunjukkan tingkat polusi yang sedikit lebih rendah namun 
-                    tetap signifikan. Secara keseluruhan, grafik ini menggambarkan bahwa wilayah Jawa Barat dan sekitarnya masih 
-                    mendominasi kategori daerah dengan polusi udara tinggi, yang kemungkinan dipengaruhi oleh aktivitas kendaraan, 
-                    industri, serta kepadatan penduduk yang tinggi.
-                  </p>
-                </div>
-              </div>
             </div>
 
             {/* Kanan */}
@@ -407,6 +326,112 @@ export default function App() {
           </table>
         </section>
       )}
+
+      {/* === STATISTIK PARTIKULAT === */}
+      {section === "statistik" && (
+        <section
+          style={{
+            backgroundColor: "white",
+            padding: "60px 80px",
+            minHeight: "100vh",
+          }}
+        >
+          <h2
+            style={{
+              fontSize: "2rem",
+              fontWeight: "700",
+              color: "#0284c7",
+              marginBottom: "20px",
+            }}
+          >
+            Statistik Partikulat (PM)
+          </h2>
+      
+          {/* Grafik Garis Kualitas Udara */}
+          <div
+            style={{
+              display: "flex",
+              gap: "10px",
+              alignItems: "center",
+              justifyContent: "space-between",
+              flexWrap: "wrap",
+              marginTop: "40px",
+              backgroundColor: "#f0f9ff",
+              borderRadius: "12px",
+              padding: "20px 30px",
+              boxShadow: "0 4px 10px rgba(0,0,0,0.05)",
+            }}
+          >
+            {/* Grafik di kiri */}
+            <div style={{ flex: "1 1 60%", minWidth: "400px" }}>
+              <h3
+                style={{
+                  color: "#0284c7",
+                  fontWeight: "700",
+                  fontSize: "1.2rem",
+                  marginBottom: "10px",
+                }}
+              >
+                Kota dengan Polusi Udara Tinggi (AirZone+)
+              </h3>
+      
+              <div style={{ width: "100%", height: "320px" }}>
+                <ResponsiveContainer>
+                  <LineChart
+                    data={chartData}
+                    margin={{ top: 50, right: 20, left: 0, bottom: 10 }}
+                  >
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis
+                      dataKey="lokasi"
+                      tick={{ fontSize: 10 }}
+                      interval={0}
+                      angle={-45}
+                      textAnchor="end"
+                      height={80}
+                    />
+                    <YAxis
+                      domain={[0, 120]}
+                      ticks={[0, 20, 40, 60, 80, 100, 120]}
+                      tick={{ fontSize: 12 }}
+                      interval={0}
+                      allowDecimals={false}
+                    />
+                    <Tooltip />
+                    <Line
+                      type="monotone"
+                      dataKey="nilai"
+                      stroke="#0284c7"
+                      strokeWidth={3}
+                    />
+                  </LineChart>
+                </ResponsiveContainer>
+              </div>
+            </div>
+      
+            {/* Penjelasan di kanan */}
+            <div style={{ flex: "1 1 35%", minWidth: "250px", marginTop: "-10px" }}>
+              <p
+                style={{
+                  color: "#444",
+                  lineHeight: "1.7",
+                  fontSize: "1rem",
+                  textAlign: "justify",
+                }}
+              >
+                Grafik <b>“Kota dengan Polusi Udara Tinggi (AirZone +)”</b> 
+                menunjukkan bahwa Pabuaran memiliki tingkat polusi udara tertinggi, 
+                diikuti oleh Pamanukan dan Lembang dengan nilai yang tinggi. Daerah 
+                lain seperti Pamulang, Cikupa, dan Cileunyi menunjukkan tingkat polusi 
+                yang lebih rendah namun tetap signifikan. Grafik ini menggambarkan 
+                dominasi wilayah Jawa Barat dan sekitarnya pada kategori polusi tinggi, 
+                akibat aktivitas kendaraan, industri, dan kepadatan penduduk.
+              </p>
+            </div>
+          </div>
+        </section>
+      )}
+
 
       {/* === FITUR UTAMA === */}
       {section === "features" && (

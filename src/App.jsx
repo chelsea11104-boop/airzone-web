@@ -362,7 +362,7 @@ export default function App() {
                   marginBottom: "10px",
                 }}
               >
-                Kota dengan Polusi Udara Tinggi (AirZone+)
+                Kota dengan Polusi Udara Tinggi (PM2.5)
               </h3>
       
               <div style={{ width: "100%", height: "320px" }}>

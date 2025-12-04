@@ -446,68 +446,107 @@ export default function App() {
             </div>
           </div>
 
-          {/* === STATISTIK PARTIKULAT (JAWA BARAT vs DKI JAKARTA) === */}
+          {/* === Statistik Partikulat per Provinsi === */}
           <div
             style={{
               marginTop: "60px",
-              backgroundColor: "#fff7ed",
               padding: "30px",
-              borderRadius: "14px",
+              backgroundColor: "#e0f2fe",
+              borderRadius: "15px",
               boxShadow: "0 4px 10px rgba(0,0,0,0.05)",
             }}
           >
             <h2
               style={{
-                fontSize: "1.7rem",
-                color: "#d97706",
+                fontSize: "1.6rem",
                 fontWeight: "700",
+                color: "#0284c7",
                 marginBottom: "20px",
               }}
             >
-              Statistik Partikulat PM2.5 — Perbandingan Jawa Barat & DKI Jakarta
+              Statistik Partikulat — Perbandingan Jawa Barat & DKI Jakarta
             </h2>
           
-            {/* ====== GRAFIK BATANG ====== */}
-            <div style={{ width: "100%", height: "350px", marginBottom: "30px" }}>
+            {/* GRAFIK 1 — JAWA BARAT */}
+            <div style={{ width: "100%", height: "320px", marginBottom: "50px" }}>
+              <h3 style={{ color: "#0369a1", marginBottom: "10px" }}>
+                Grafik PM2.5 – Jawa Barat
+              </h3>
               <ResponsiveContainer>
-                <BarChart data={pmData}>
+                <BarChart
+                  data={pmData.filter((d) => d.provinsi === "Jawa Barat")}
+                  margin={{ top: 20, right: 20, left: 0, bottom: 10 }}
+                >
                   <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis dataKey="lokasi" angle={-45} textAnchor="end" height={90} />
-                  <YAxis />
+                  <XAxis dataKey="lokasi" tick={{ fontSize: 10 }} interval={0} angle={-45} textAnchor="end" height={80} />
+                  <YAxis tick={{ fontSize: 12 }} />
                   <Tooltip />
-                  <Bar dataKey="pm" fill="#d97706" />
+                  <Bar dataKey="pm" fill="#0284c7" />
                 </BarChart>
               </ResponsiveContainer>
             </div>
           
-            {/* ====== TABEL TITIK PARTIKEL ====== */}
-            <table
+            {/* GRAFIK 2 — DKI JAKARTA */}
+            <div style={{ width: "100%", height: "320px", marginBottom: "50px" }}>
+              <h3 style={{ color: "#0369a1", marginBottom: "10px" }}>
+                Grafik PM2.5 – DKI Jakarta
+              </h3>
+              <ResponsiveContainer>
+                <BarChart
+                  data={pmData.filter((d) => d.provinsi === "DKI Jakarta")}
+                  margin={{ top: 20, right: 20, left: 0, bottom: 10 }}
+                >
+                  <CartesianGrid strokeDasharray="3 3" />
+                  <XAxis dataKey="lokasi" tick={{ fontSize: 10 }} interval={0} angle={-45} textAnchor="end" height={80} />
+                  <YAxis tick={{ fontSize: 12 }} />
+                  <Tooltip />
+                  <Bar dataKey="pm" fill="#0284c7" />
+                </BarChart>
+              </ResponsiveContainer>
+            </div>
+          
+            {/* TABEL KECIL */}
+            <div
               style={{
-                width: "100%",
-                borderCollapse: "collapse",
-                marginTop: "20px",
-                border: "1px solid #ddd",
+                backgroundColor: "white",
+                padding: "20px",
+                borderRadius: "10px",
+                maxWidth: "600px",
+                margin: "0 auto",
+                boxShadow: "0 2px 8px rgba(0,0,0,0.05)",
               }}
             >
-              <thead>
-                <tr style={{ backgroundColor: "#fde68a" }}>
-                  <th style={thStyle}>Lokasi</th>
-                  <th style={thStyle}>Provinsi</th>
-                  <th style={thStyle}>PM2.5 (µg/m³)</th>
-                </tr>
-              </thead>
+              <h3
+                style={{
+                  textAlign: "center",
+                  color: "#0284c7",
+                  marginBottom: "15px",
+                }}
+              >
+                Tabel Ringkas PM2.5
+              </h3>
           
-              <tbody>
-                {pmData.map((row, i) => (
-                  <tr key={i}>
-                    <td style={tdStyle}>{row.lokasi}</td>
-                    <td style={tdStyle}>{row.provinsi}</td>
-                    <td style={tdStyle}>{row.pm}</td>
+              <table style={{ width: "100%", borderCollapse: "collapse" }}>
+                <thead>
+                  <tr style={{ backgroundColor: "#cff1ff" }}>
+                    <th style={thStyle}>Lokasi</th>
+                    <th style={thStyle}>Provinsi</th>
+                    <th style={thStyle}>PM2.5</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>    
+                </thead>
+          
+                <tbody>
+                  {pmData.map((item, i) => (
+                    <tr key={i}>
+                      <td style={tdStyle}>{item.lokasi}</td>
+                      <td style={tdStyle}>{item.provinsi}</td>
+                      <td style={tdStyle}>{item.pm}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>        
         </section>
       )}
 

@@ -53,7 +53,7 @@ export default function App() {
   };
 
   const [pmData] = useState([
-    { lokasi: "TML Energy", provinsi: "Jawa Barat", pm: 67 },
+    { lokasi: "TML Energy", provinsi: "Jawa Barat", pm: 67 µg/m³ },
     { lokasi: "Setra Duta", provinsi: "Jawa Barat", pm: 62 },
     { lokasi: "Sentul City", provinsi: "Jawa Barat", pm: 58 },
     { lokasi: "Caringin", provinsi: "Jawa Barat", pm: 62 },
@@ -450,101 +450,80 @@ export default function App() {
           <div
             style={{
               marginTop: "60px",
-              padding: "30px",
-              backgroundColor: "#e0f2fe",
-              borderRadius: "15px",
+              backgroundColor: "#f0f9ff",
+              padding: "30px 40px",
+              borderRadius: "16px",
               boxShadow: "0 4px 10px rgba(0,0,0,0.05)",
             }}
           >
             <h2
               style={{
-                fontSize: "1.6rem",
+                fontSize: "1.8rem",
                 fontWeight: "700",
                 color: "#0284c7",
                 marginBottom: "20px",
               }}
             >
-              Statistik Partikulat — Perbandingan Jawa Barat & DKI Jakarta
+              Perbandingan Partikel Kasar PM2.5: Jawa Barat vs DKI Jakarta
             </h2>
           
-            {/* GRAFIK 1 — JAWA BARAT */}
-            <div style={{ width: "100%", height: "320px", marginBottom: "50px" }}>
-              <h3 style={{ color: "#0369a1", marginBottom: "10px" }}>
+            {/* --- Grafik Jawa Barat --- */}
+            <div style={{ marginBottom: "50px" }}>
+              <h3 style={{ color: "#0284c7", fontWeight: "600" }}>
                 Grafik PM2.5 – Jawa Barat
               </h3>
-              <ResponsiveContainer>
-                <BarChart
-                  data={pmData.filter((d) => d.provinsi === "Jawa Barat")}
-                  margin={{ top: 20, right: 20, left: 0, bottom: 10 }}
-                >
-                  <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis dataKey="lokasi" tick={{ fontSize: 10 }} interval={0} angle={-45} textAnchor="end" height={80} />
-                  <YAxis tick={{ fontSize: 12 }} />
-                  <Tooltip />
-                  <Bar dataKey="pm" fill="#0284c7" />
-                </BarChart>
-              </ResponsiveContainer>
+              <div style={{ width: "100%", height: "300px" }}>
+                <ResponsiveContainer>
+                  <BarChart data={pmData.filter((d) => d.provinsi === "Jawa Barat")}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="lokasi" tick={{ fontSize: 10 }} angle={-45} textAnchor="end" height={80} />
+                    <YAxis />
+                    <Tooltip />
+                    <Bar dataKey="pm" fill="#0284c7" />
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
             </div>
           
-            {/* GRAFIK 2 — DKI JAKARTA */}
-            <div style={{ width: "100%", height: "320px", marginBottom: "50px" }}>
-              <h3 style={{ color: "#0369a1", marginBottom: "10px" }}>
+            {/* --- Grafik DKI Jakarta --- */}
+            <div style={{ marginBottom: "40px" }}>
+              <h3 style={{ color: "#0284c7", fontWeight: "600" }}>
                 Grafik PM2.5 – DKI Jakarta
               </h3>
-              <ResponsiveContainer>
-                <BarChart
-                  data={pmData.filter((d) => d.provinsi === "DKI Jakarta")}
-                  margin={{ top: 20, right: 20, left: 0, bottom: 10 }}
-                >
-                  <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis dataKey="lokasi" tick={{ fontSize: 10 }} interval={0} angle={-45} textAnchor="end" height={80} />
-                  <YAxis tick={{ fontSize: 12 }} />
-                  <Tooltip />
-                  <Bar dataKey="pm" fill="#0284c7" />
-                </BarChart>
-              </ResponsiveContainer>
+              <div style={{ width: "100%", height: "300px" }}>
+                <ResponsiveContainer>
+                  <BarChart data={pmData.filter((d) => d.provinsi === "DKI Jakarta")}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="lokasi" tick={{ fontSize: 10 }} angle={-45} textAnchor="end" height={80} />
+                    <YAxis />
+                    <Tooltip />
+                    <Bar dataKey="pm" fill="#0284c7" />
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
             </div>
           
-            {/* TABEL KECIL */}
+            {/* --- Perbandingan Angka --- */}
             <div
               style={{
                 backgroundColor: "white",
                 padding: "20px",
-                borderRadius: "10px",
-                maxWidth: "600px",
-                margin: "0 auto",
-                boxShadow: "0 2px 8px rgba(0,0,0,0.05)",
+                borderRadius: "12px",
+                border: "1px solid #cce7f6",
+                marginTop: "10px",
               }}
             >
-              <h3
-                style={{
-                  textAlign: "center",
-                  color: "#0284c7",
-                  marginBottom: "15px",
-                }}
-              >
-                Tabel Ringkas PM2.5
+              <h3 style={{ color: "#0284c7", fontWeight: "600", marginBottom: "10px" }}>
+                Ringkasan Perbandingan
               </h3>
           
-              <table style={{ width: "100%", borderCollapse: "collapse" }}>
-                <thead>
-                  <tr style={{ backgroundColor: "#cff1ff" }}>
-                    <th style={thStyle}>Lokasi</th>
-                    <th style={thStyle}>Provinsi</th>
-                    <th style={thStyle}>PM2.5</th>
-                  </tr>
-                </thead>
-          
-                <tbody>
-                  {pmData.map((item, i) => (
-                    <tr key={i}>
-                      <td style={tdStyle}>{item.lokasi}</td>
-                      <td style={tdStyle}>{item.provinsi}</td>
-                      <td style={tdStyle}>{item.pm}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+              <p style={{ color: "#444", fontSize: "0.95rem", lineHeight: "1.6" }}>
+                Rata-rata PM2.5 Jawa Barat: <b>81.9 µg/m³</b> <br />
+                Rata-rata PM2.5 DKI Jakarta: <b>64.7 µg/m³</b> <br /><br />
+                Secara umum, tingkat partikel kasar PM2.5 di <b>Jawa Barat lebih tinggi sekitar 17 µg/m³</b>
+                dibandingkan DKI Jakarta, terutama dipengaruhi oleh titik pemantauan seperti Pabuaran,
+                Lembang, dan Pamanukan yang mencatat nilai ekstrem.
+              </p>
             </div>
           </div>        
         </section>

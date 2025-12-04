@@ -373,7 +373,14 @@ export default function App() {
           >
             Lokasi Pemantauan
           </h2>
-      
+          
+          <div
+            style={{
+              maxWidth: "800px",
+              margin: "0 auto",
+            }}
+          >
+
           <table
             style={{
               width: "100%",

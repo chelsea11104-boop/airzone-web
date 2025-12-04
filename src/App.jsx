@@ -199,7 +199,7 @@ export default function App() {
                 fontSize: "1.5rem",
               }}
             >
-              Data nyata dari berbagai titik di Jawa Barat dan sekitarnya
+              Data nyata dari berbagai titik di Jawa Barat, DKI Jakarta dan Banten
             </h3>
           </div>
         </section>
@@ -243,8 +243,8 @@ export default function App() {
                 peningkatan kualitas hidup melalui informasi yang akurat mengenai
                 udara yang kita hirup sehari-hari. Sebagai platform pemantauan
                 kualitas udara terkemuka, kami berfokus pada penyediaan data dan
-                analisis komprehensif bagi masyarakat di wilayah Jawa Barat dan DKI
-                Jakarta. Kami percaya bahwa dengan memahami kondisi udara di sekitar
+                analisis komprehensif bagi masyarakat di wilayah Jawa Barat, DKI Jakarta dan Banten. 
+                Kami percaya bahwa dengan memahami kondisi udara di sekitar
                 kita, setiap individu dapat membuat keputusan yang lebih baik untuk
                 kesehatan diri, keluarga, dan komunitas. AirZone berkomitmen untuk
                 transparansi data dan edukasi publik sebagai langkah awal menuju
@@ -459,8 +459,8 @@ export default function App() {
               <div style={{ fontSize: "3rem" }}>🗺️</div>
               <h3 style={fiturTitle}>Peta Udara Regional</h3>
               <p style={fiturText}>
-                Menampilkan peta interaktif kualitas udara di Jawa Barat dan DKI
-                Jakarta dengan warna berdasarkan tingkat AQI.
+                Menampilkan peta interaktif kualitas udara di Jawa Barat, DKI Jakarta dan Banten
+                dengan warna berdasarkan tingkat AQI.
               </p>
             </div>
 
@@ -566,7 +566,7 @@ export default function App() {
                     Cakupan Wilayah Luas
                   </h3>
                   <p style={{ color: "#333", lineHeight: "1.4", fontSize: "0.9rem" }}>
-                    Menjangkau berbagai kota dan kabupaten di Jawa Barat serta DKI Jakarta,
+                    Menjangkau berbagai kota dan kabupaten di Jawa Barat, DKI Jakarta dan Banten,
                     memberikan gambaran menyeluruh tentang kondisi udara.
                   </p>
                 </div>
@@ -707,6 +707,6 @@ const fiturText = { color: "#333", marginTop: "8px", lineHeight: "1.5" };
 
 const infoList = [
   { icon: "📈", title: "Data yang Terperinci dan Terpercaya", text: "Kami menyediakan Indeks Kualitas Udara (AQI) dan konsentrasi polutan utama (terutama PM2.5) dengan analisis yang mendalam." },
-  { icon: "📍", title: "Fokus Regional: Jawa Barat dan DKI Jakarta", text: "AirZone secara khusus memantau dan menganalisis kualitas udara dari berbagai titik di wilayah yang sangat padat ini." },
+  { icon: "📍", title: "Fokus Regional: Jawa Barat, DKI Jakarta dan Banten", text: "AirZone secara khusus memantau dan menganalisis kualitas udara dari berbagai titik di wilayah yang sangat padat ini." },
   { icon: "💡", title: "Edukasi dan Rekomendasi Kesehatan", text: "Kami menerjemahkan data polusi udara yang kompleks ke dalam kategori yang mudah dipahami (seperti Baik, Sedang, Tidak Sehat)." },
 ];

@@ -207,7 +207,7 @@ export default function App() {
                 marginBottom: "20px",
               }}
             >
-              <a href="https://airzone.rf.gd/" target="_blank" rel="noreferrer">
+              <a href="https://chelsea11104-boop.github.io/map_airzone/" target="_blank" rel="noreferrer">
                 <button style={primaryButton}>Cek Udara Sekitarmu</button>
               </a>
               <button onClick={() => setSection("about")} style={outlineButton}>
@@ -607,7 +607,7 @@ export default function App() {
                 Peta Udara Regional
               </h2>
               <a
-                href="https://airzone.rf.gd/"
+                href="https://chelsea11104-boop.github.io/map_airzone/"
                 target="_blank"
                 rel="noreferrer"
                 style={{ display: "inline-block" }}
